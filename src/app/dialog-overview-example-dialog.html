@@ -1,0 +1,21 @@
+<i
+  class="fa fa-trash-o"
+  (click)="deleteNote()"
+  style="color: red;font-size:24px; float: right"
+></i>
+<div mat-dialog-content>
+  <textarea
+    name=""
+    class="editor"
+    id="noteUpdateEditor"
+    [value]="data.text"
+  ></textarea>
+  <div class="card-tags">
+    <div class="card blue" (click)="updateNote('blue')"></div>
+    <div class="card indigo" (click)="updateNote('indigo')"></div>
+    <div class="card red" (click)="updateNote('red')"></div>
+    <div class="card green" (click)="updateNote('green')"></div>
+    <div class="card yellow" (click)="updateNote('yellow')"></div>
+    <div class="card cyan" (click)="updateNote('cyan')"></div>
+  </div>
+</div>

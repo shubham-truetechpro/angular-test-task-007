@@ -1,0 +1,58 @@
+<mat-sidenav-container class="root" *ngIf="true">
+  <mat-sidenav #sidenav mode="over" class="sidebar-container">
+    <app-sidebar
+      (visibleNotes)="handleNotesVisibility($event); sidenav.toggle();"
+    ></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="background-gradient">
+      <button
+        mat-icon-button
+        (click)="sidenav.toggle();"
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="title">Notes</span>
+    </mat-toolbar>
+    <div class="main-content">
+      <div class="chalkboard">
+        <div class="editable">
+          <textarea
+            class="editor"
+            (focusin)="isChalkboardInUse = true"
+            [(ngModel)]="noteEditor"
+            placeholder="Take a note"
+            matInput
+          >
+          </textarea>
+        </div>
+        <div
+          class="card-tags"
+          [class]="isChalkboardInUse ? 'active' : 'hidden'"
+        >
+          <div class="card blue" (click)="createNote('blue')"></div>
+          <div class="card indigo" (click)="createNote('indigo')"></div>
+          <div class="card red" (click)="createNote('red')"></div>
+          <div class="card green" (click)="createNote('green')"></div>
+          <div class="card yellow" (click)="createNote('yellow')"></div>
+          <div class="card cyan" (click)="createNote('cyan')"></div>
+        </div>
+      </div>
+      <div class="notes-card-container">
+        <div
+          *ngFor="let note of filteredNotesList; let i = index"
+          class="notes-card"
+          [class]="note.noteBadge"
+          (click)="openDialog(note.text, i)"
+        >
+          <div>{{note.text}}</div>
+          <span class="note-time">{{getFormattedDate(note.time)}}</span>
+        </div>
+      </div>
+    </div>
+    <!--    <app-main-container></app-main-container>-->
+  </mat-sidenav-content>
+</mat-sidenav-container>

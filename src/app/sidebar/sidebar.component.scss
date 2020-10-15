@@ -1,0 +1,36 @@
+@import "../../assets/common";
+
+.heading {
+  padding: 22px;
+  font-size: 20px;
+  color: #fff;
+}
+.filter {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  height: 45px;
+  span {
+    display: block;
+    margin: 10px;
+  }
+}
+
+.blue {
+  background-color: $blue;
+}
+.indigo {
+  background-color: $indigo;
+}
+.red {
+  background-color: $red;
+}
+.green {
+  background-color: $green;
+}
+.yellow {
+  background-color: $yellow;
+}
+.cyan {
+  background-color: $cyan;
+}

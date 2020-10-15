@@ -1,0 +1,15 @@
+$blue: #a2ccf8;
+$indigo: #cc9fe8;
+$red: #e45756;
+$green: #99f599;
+$yellow: #fcf766;
+$cyan: #71f3e6;
+
+.background-gradient {
+  background: rgb(233, 30, 99);
+  background: linear-gradient(
+    90deg,
+    rgba(233, 30, 99, 1) 39%,
+    rgba(83, 109, 254, 1) 100%
+  );
+}

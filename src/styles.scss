@@ -1,0 +1,64 @@
+@import "./assets/common"; /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 20px;
+
+  .card {
+    display: inline-block;
+    height: 100%;
+    width: -webkit-fill-available;
+    width: -moz-available;
+
+    &.blue {
+      background-color: $blue;
+    }
+
+    &.indigo {
+      background-color: $indigo;
+    }
+
+    &.red {
+      background-color: $red;
+    }
+
+    &.green {
+      background-color: $green;
+    }
+
+    &.yellow {
+      background-color: $yellow;
+    }
+
+    &.cyan {
+      background-color: $cyan;
+    }
+  }
+}
+
+textarea.editor {
+  width: 100%;
+  border: 0;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  &:focus {
+    border: 0;
+    outline: none;
+  }
+  &::placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
